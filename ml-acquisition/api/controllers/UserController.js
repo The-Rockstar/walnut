@@ -21,9 +21,7 @@ module.exports = {
 		  sails.log(req.body)
 
 		var data = req.body
-					User.findOne(req.body).exec( function (err, data) {
-            			sails.log(data + err)
-
+		User.findOne(req.body).exec( function (err, data) {
             	if(data){
             		sails.log(data)
 	            	var token = jwt.sign(data, secret, {});

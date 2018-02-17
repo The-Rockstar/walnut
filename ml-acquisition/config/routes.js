@@ -40,7 +40,12 @@ module.exports.routes = {
   'POST /sign_up':'UserController.signUp',
   'POST /answers':'UserAnswersController.pushEntry',
   'GET /questionnaire':'QuestionnaireController.bundle',
+  'GET /bundle':'BundleController.getBundle',
+
+
+  'POST /bundle':{response: 'forbidden'},
   'POST /questionnaire':{response: 'forbidden'},
+
 
 
 

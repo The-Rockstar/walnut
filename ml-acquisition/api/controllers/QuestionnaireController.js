@@ -11,12 +11,12 @@ module.exports = {
 		var type = req.query.type
 		if (type) {
 			var data = {bundle_id:type}
-			Questionnaire.getQuestionnaire(data, function(callback){
-				if (callback) {
-					return res.json(200,callback);				
-				}
-				return res.json(500,{message:"server issue"});				
-			});
+		 	Questionnaire.findOne(data).exec(function(err,data){
+		 		if (err) {
+		 			return callback(err);
+		 		}
+		 		return callback(data);
+		 	});
 		}else
 			return res.json(500,{message:"undefine type"});				
 
