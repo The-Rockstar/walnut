@@ -17,6 +17,9 @@ module.exports = {
 	
 
 	login: function(req,res){
+
+		  sails.log(req.body)
+
 		var data = req.body
 					User.findOne(req.body).exec( function (err, data) {
             			sails.log(data + err)
